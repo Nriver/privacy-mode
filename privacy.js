@@ -502,6 +502,8 @@ function setLanguage(language) {
     refreshLanguageUi();
 }
 
+window.setLanguage = setLanguage;
+
 function createPrivacyToggleButton(extraStyle = "") {
     const toggleBtn = document.createElement("span");
     toggleBtn.className = "privacy-mode-toggle bx";
