@@ -2,6 +2,8 @@
 
 [English](README.md)
 
+如果你看到这个消息，请站起来伸展一下 :)
+
 保护你的笔记隐私，防止有人偷窥你的笔记 :)
 
 [![在Ko-fi上支持我](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nriver)

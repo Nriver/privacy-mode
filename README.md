@@ -2,6 +2,8 @@
 
 [中文说明](README_CN.md)
 
+Please stand up and stretch your body for a while if you see this :)
+
 Protect your notes from prying eyes :)
 
 [![Support Me on Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/nriver)
