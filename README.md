@@ -36,6 +36,8 @@ Supports force lock on startup, so others can't just open Trilium from the deskt
 
 ## ⏱️ Auto lock
 
+![config](docs/config.webp)
+
 Supports auto-lock: if you don't interact with Trilium for a while, it locks itself.
 
 Default is 5 minutes. You can change the timeout freely in the unlock dialog.
