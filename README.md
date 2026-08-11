@@ -54,6 +54,7 @@ You can switch language in the unlock dialog. Your choice is remembered.
 
 1. The privacy mode password is independent from your Trilium password. You can set a simple, easy-to-type password just for privacy mode.
 2. Options like auto-lock and force lock on startup live in the unlock dialog — tweak them to fit your needs.
+3. If you want to clear the password, read the note inside the plugin
 
 # 🤔 Why I made this?
 
