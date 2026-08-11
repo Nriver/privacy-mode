@@ -818,8 +818,8 @@ function showPasswordDialog(messageKey, options = {}) {
             </button>
         </div>
 
-        ${allowChange ? `
         <div class="privacy-settings">
+            ${allowChange ? `
             <button id="privacy-change-password" 
                 class="privacy-link">
                 🔑 <span data-i18n="changePassword">${i18n("changePassword")}</span>
@@ -864,6 +864,7 @@ function showPasswordDialog(messageKey, options = {}) {
                     value="${localStorage.getItem("privacyMode_autoLockTimeout") || config.autoLockTimeout}"
                 >
             </div>
+            `:""}
 
             <label class="privacy-option">
                 <span data-i18n="language">${i18n("language")}</span>
@@ -877,7 +878,6 @@ function showPasswordDialog(messageKey, options = {}) {
             </label>
 
         </div>
-        `:""}
     </div>
 </div>
 
@@ -1135,11 +1135,11 @@ translateY(-2px);
                     autoLockSettings.style.display = autoLockCheckbox.checked ? "block" : "none";
                 };
             }
+        }
 
-            const languageSelector = document.querySelector("#privacy-language-selector");
-            if (languageSelector) {
-                languageSelector.onchange = () => setLanguage(languageSelector.value);
-            }
+        const languageSelector = document.querySelector("#privacy-language-selector");
+        if (languageSelector) {
+            languageSelector.onchange = () => setLanguage(languageSelector.value);
         }
 
         input.focus();
