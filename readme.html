@@ -6,6 +6,50 @@
   color: var(--main-text-color, #2c3e50);
 ">
 
+  <style>
+    /* 强制代码块深色背景，防止被 Trilium 全局/主题样式覆盖 */
+    #privacy-help .code-container {
+      background: #1e1e1e !important;
+      color: #d4d4d4 !important;
+      border-radius: 10px !important;
+      padding: 18px 20px !important;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', 'Cascadia Code', monospace !important;
+      font-size: 14.5px !important;
+      line-height: 1.65 !important;
+      overflow-x: auto !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+    }
+    #privacy-help .code-container pre,
+    #privacy-help .code-container code {
+      background: transparent !important;
+      color: inherit !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      font-family: inherit !important;
+      font-size: inherit !important;
+      white-space: pre-wrap !important;
+      word-break: break-all !important;
+    }
+    #privacy-help .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 12px;
+      border: none;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.12);
+      color: #d4d4d4;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+      z-index: 2;
+    }
+    #privacy-help .copy-btn:hover {
+      background: rgba(255,255,255,0.22);
+    }
+  </style>
+
   <!-- 顶部标题 + 语言切换 -->
   <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 14px;">
     <div id="top-label" style="font-size: 15px; opacity: 0.55; letter-spacing: 0.3px;">Privacy Mode Help</div>
@@ -76,31 +120,9 @@
       </ol>
 
       <div style="position: relative;">
-        <button class="copy-btn" data-lang="en" style="
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          padding: 5px 12px;
-          border: none;
-          border-radius: 6px;
-          background: rgba(255,255,255,0.12);
-          color: #d4d4d4;
-          font-size: 13px;
-          cursor: pointer;
-          transition: all 0.2s;
-          z-index: 1;
-        ">Copy</button>
-        <div style="
-          background: #1e1e1e;
-          color: #d4d4d4;
-          border-radius: 10px;
-          padding: 18px 20px;
-          font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-          font-size: 14.5px;
-          line-height: 1.65;
-          overflow-x: auto;
-        ">
-          <pre style="margin: 0; white-space: pre-wrap; word-break: break-all;"><code class="code-block">localStorage.removeItem("privacyMode_password");
+        <button class="copy-btn" data-lang="en">Copy</button>
+        <div class="code-container">
+          <pre><code class="code-block">localStorage.removeItem("privacyMode_password");
 localStorage.setItem("privacyMode_locked", "false");
 localStorage.setItem("privacyMode_enabled", "false");
 localStorage.removeItem("privacyMode_forceLock");
@@ -153,31 +175,9 @@ window.location.reload();</code></pre>
       </ol>
 
       <div style="position: relative;">
-        <button class="copy-btn" data-lang="cn" style="
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          padding: 5px 12px;
-          border: none;
-          border-radius: 6px;
-          background: rgba(255,255,255,0.12);
-          color: #d4d4d4;
-          font-size: 13px;
-          cursor: pointer;
-          transition: all 0.2s;
-          z-index: 1;
-        ">复制</button>
-        <div style="
-          background: #1e1e1e;
-          color: #d4d4d4;
-          border-radius: 10px;
-          padding: 18px 20px;
-          font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-          font-size: 14.5px;
-          line-height: 1.65;
-          overflow-x: auto;
-        ">
-          <pre style="margin: 0; white-space: pre-wrap; word-break: break-all;"><code class="code-block">localStorage.removeItem("privacyMode_password");
+        <button class="copy-btn" data-lang="cn">复制</button>
+        <div class="code-container">
+          <pre><code class="code-block">localStorage.removeItem("privacyMode_password");
 localStorage.setItem("privacyMode_locked", "false");
 localStorage.setItem("privacyMode_enabled", "false");
 localStorage.removeItem("privacyMode_forceLock");
@@ -242,7 +242,6 @@ window.location.reload();</code></pre>
         this.textContent = isCn ? "已复制" : "Copied!";
         this.style.background = "rgba(76, 175, 80, 0.35)";
       } catch (e) {
-        // 兼容旧环境
         const textarea = document.createElement("textarea");
         textarea.value = code;
         document.body.appendChild(textarea);
