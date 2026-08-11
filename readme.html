@@ -1,0 +1,265 @@
+<div id="privacy-help" style="
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.7;
+  margin: 0 auto;
+  padding: 32px 28px 48px;
+  color: var(--main-text-color, #2c3e50);
+">
+
+  <!-- 顶部标题 + 语言切换 -->
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; flex-wrap: wrap; gap: 14px;">
+    <div id="top-label" style="font-size: 15px; opacity: 0.55; letter-spacing: 0.3px;">Privacy Mode Help</div>
+    <div style="display: flex; background: rgba(128,128,128,0.12); border-radius: 10px; padding: 4px;">
+      <button id="lang-en" style="
+        padding: 7px 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        background: transparent;
+        color: inherit;
+        transition: all 0.2s;
+      ">English</button>
+      <button id="lang-zh" style="
+        padding: 7px 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+        background: transparent;
+        color: inherit;
+        transition: all 0.2s;
+      ">中文</button>
+    </div>
+  </div>
+
+  <!-- 英文内容 -->
+  <div id="content-en" style="display: none;">
+    <h1 style="
+      margin: 0 0 10px 0;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+    ">Protect your privacy</h1>
+    <p style="margin: 0 0 36px 0; opacity: 0.6; font-size: 17px;">Keep your notes safe with client-side locking</p>
+
+    <div style="
+      background: rgba(128,128,128,0.07);
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(128,128,128,0.1);
+    ">
+      <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px;">🔒</span> About lock password
+      </h2>
+      <p style="margin: 0 0 12px 0; font-size: 16.5px;">The password is stored as a hash value in the client's local storage.</p>
+      <p style="margin: 0 0 12px 0; font-size: 16.5px;">Each client has a different configuration.</p>
+      <p style="margin: 0; font-size: 16.5px; opacity: 0.85;">This is useful for cases like requiring a password at work but not at home.</p>
+    </div>
+
+    <div style="
+      background: rgba(128,128,128,0.07);
+      border-radius: 14px;
+      padding: 26px 28px;
+      border: 1px solid rgba(128,128,128,0.1);
+    ">
+      <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px;">🗑️</span> Clear password
+      </h2>
+      <p style="margin: 0 0 18px 0; font-size: 16.5px;">If you forget your password, or no longer need the lock, you can erase it by doing the following:</p>
+      
+      <ol style="margin: 0 0 20px 0; padding-left: 22px; font-size: 16.5px;">
+        <li style="margin-bottom: 8px;">Press <code style="background: rgba(128,128,128,0.15); padding: 2px 7px; border-radius: 5px; font-size: 15px;">F12</code> or <code style="background: rgba(128,128,128,0.15); padding: 2px 7px; border-radius: 5px; font-size: 15px;">Ctrl + Shift + I</code> to open Developer Tools.</li>
+        <li>Copy these into the console and press Enter.</li>
+      </ol>
+
+      <div style="position: relative;">
+        <button class="copy-btn" data-lang="en" style="
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          padding: 5px 12px;
+          border: none;
+          border-radius: 6px;
+          background: rgba(255,255,255,0.12);
+          color: #d4d4d4;
+          font-size: 13px;
+          cursor: pointer;
+          transition: all 0.2s;
+          z-index: 1;
+        ">Copy</button>
+        <div style="
+          background: #1e1e1e;
+          color: #d4d4d4;
+          border-radius: 10px;
+          padding: 18px 20px;
+          font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+          font-size: 14.5px;
+          line-height: 1.65;
+          overflow-x: auto;
+        ">
+          <pre style="margin: 0; white-space: pre-wrap; word-break: break-all;"><code class="code-block">localStorage.removeItem("privacyMode_password");
+localStorage.setItem("privacyMode_locked", "false");
+localStorage.setItem("privacyMode_enabled", "false");
+localStorage.removeItem("privacyMode_forceLock");
+window.location.reload();</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 中文内容 -->
+  <div id="content-zh" style="display: none;">
+    <h1 style="
+      margin: 0 0 10px 0;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+    ">保护你的隐私</h1>
+    <p style="margin: 0 0 36px 0; opacity: 0.6; font-size: 17px;">通过客户端锁定保护你的笔记安全</p>
+
+    <div style="
+      background: rgba(128,128,128,0.07);
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(128,128,128,0.1);
+    ">
+      <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px;">🔒</span> 关于锁定密码
+      </h2>
+      <p style="margin: 0 0 12px 0; font-size: 16.5px;">密码以哈希值的形式存储在客户端的本地存储中。</p>
+      <p style="margin: 0 0 12px 0; font-size: 16.5px;">每个客户端有不同的配置。</p>
+      <p style="margin: 0; font-size: 16.5px; opacity: 0.85;">比如你在工作时需要密码，而在家中不需要的情况会很有用。</p>
+    </div>
+
+    <div style="
+      background: rgba(128,128,128,0.07);
+      border-radius: 14px;
+      padding: 26px 28px;
+      border: 1px solid rgba(128,128,128,0.1);
+    ">
+      <h2 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 22px;">🗑️</span> 清除密码
+      </h2>
+      <p style="margin: 0 0 18px 0; font-size: 16.5px;">如果你忘记了密码，或者不需要锁定了，可以通过以下方式将其清除：</p>
+      
+      <ol style="margin: 0 0 20px 0; padding-left: 22px; font-size: 16.5px;">
+        <li style="margin-bottom: 8px;">按下 <code style="background: rgba(128,128,128,0.15); padding: 2px 7px; border-radius: 5px; font-size: 15px;">F12</code> 或 <code style="background: rgba(128,128,128,0.15); padding: 2px 7px; border-radius: 5px; font-size: 15px;">Ctrl + Shift + I</code> 打开开发者工具。</li>
+        <li>在控制台输入以下内容并按回车。</li>
+      </ol>
+
+      <div style="position: relative;">
+        <button class="copy-btn" data-lang="zh" style="
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          padding: 5px 12px;
+          border: none;
+          border-radius: 6px;
+          background: rgba(255,255,255,0.12);
+          color: #d4d4d4;
+          font-size: 13px;
+          cursor: pointer;
+          transition: all 0.2s;
+          z-index: 1;
+        ">复制</button>
+        <div style="
+          background: #1e1e1e;
+          color: #d4d4d4;
+          border-radius: 10px;
+          padding: 18px 20px;
+          font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+          font-size: 14.5px;
+          line-height: 1.65;
+          overflow-x: auto;
+        ">
+          <pre style="margin: 0; white-space: pre-wrap; word-break: break-all;"><code class="code-block">localStorage.removeItem("privacyMode_password");
+localStorage.setItem("privacyMode_locked", "false");
+localStorage.setItem("privacyMode_enabled", "false");
+localStorage.removeItem("privacyMode_forceLock");
+window.location.reload();</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const LANG_KEY = "privacyMode_language";
+  const $en = document.getElementById("content-en");
+  const $zh = document.getElementById("content-zh");
+  const $btnEn = document.getElementById("lang-en");
+  const $btnZh = document.getElementById("lang-zh");
+  const $topLabel = document.getElementById("top-label");
+
+  function setLanguage(lang) {
+    localStorage.setItem(LANG_KEY, lang);
+
+    const activeStyle = {
+      background: "rgba(128,128,128,0.25)",
+      fontWeight: "600",
+      opacity: "1"
+    };
+    const inactiveStyle = {
+      background: "transparent",
+      fontWeight: "400",
+      opacity: "0.7"
+    };
+
+    if (lang === "zh") {
+      $en.style.display = "none";
+      $zh.style.display = "block";
+      $topLabel.textContent = "隐私模式帮助";
+      Object.assign($btnZh.style, activeStyle);
+      Object.assign($btnEn.style, inactiveStyle);
+    } else {
+      $zh.style.display = "none";
+      $en.style.display = "block";
+      $topLabel.textContent = "Privacy Mode Help";
+      Object.assign($btnEn.style, activeStyle);
+      Object.assign($btnZh.style, inactiveStyle);
+    }
+  }
+
+  // 复制功能
+  document.querySelectorAll(".copy-btn").forEach(btn => {
+    btn.addEventListener("click", async function() {
+      const code = this.parentElement.querySelector(".code-block").textContent;
+      const isZh = this.dataset.lang === "zh";
+      const originalText = this.textContent;
+
+      try {
+        await navigator.clipboard.writeText(code);
+        this.textContent = isZh ? "已复制" : "Copied!";
+        this.style.background = "rgba(76, 175, 80, 0.35)";
+      } catch (e) {
+        // 兼容旧环境
+        const textarea = document.createElement("textarea");
+        textarea.value = code;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        this.textContent = isZh ? "已复制" : "Copied!";
+        this.style.background = "rgba(76, 175, 80, 0.35)";
+      }
+
+      setTimeout(() => {
+        this.textContent = originalText;
+        this.style.background = "rgba(255,255,255,0.12)";
+      }, 1600);
+    });
+  });
+
+  const savedLang = localStorage.getItem(LANG_KEY) || "en";
+  setLanguage(savedLang);
+
+  $btnEn.addEventListener("click", () => setLanguage("en"));
+  $btnZh.addEventListener("click", () => setLanguage("zh"));
+})();
+</script>
