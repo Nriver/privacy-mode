@@ -18,11 +18,15 @@ A privacy mode widget for Trilium Notes
 
 ## 👁️ Blur mode
 
+![blur mode](docs/blur.gif)
+
 Just click the eye button on the note title bar.
 
 It blurs titles, the note tree, tabs and similar elements, and also hides the browser tab title. Click again to turn it off. Useful when you need to focus on editing.
 
 ## 🔒 Lock mode
+
+![lock mode](docs/lock.gif)
 
 Click the lock button to lock. Once locked, the editor becomes read-only and blurred.
 
