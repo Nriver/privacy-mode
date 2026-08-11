@@ -38,7 +38,7 @@ Trilium Notes 的隐私模式小部件
 
 ## ⏱️ 自动锁定
 
-![设置](docs/config.cn.webp)
+![设置](docs/config_cn.webp)
 
 支持自动锁定，超过一定时间不操作Trilium就会自动锁上。
 
